@@ -1,15 +1,23 @@
 # flutter_local_network_ios
 
-A new Flutter project.
+For iOS
 
-## Getting Started
+* Add Key `Privacy - Local Network Usage Description` to info.plist.
+* Add Key `Bonjour services` Value item `_paperang._tcp`
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+```xml
+<key>NSBonjourServices</key>
+<array>
+    <string>_paperang._tcp</string>
+    <string>_esp_local_ctrl._tcp</string>
+    <string>_matter._tcp</string>
+    <string>_matterc._udp</string>
+    <string>_matterd._udp</string>
+    <string>_meshcop._udp</string>
+</array>
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
+```xml
+<key>NSLocalNetworkUsageDescription</key>
+<string>是否允许使用本地网络</string>
+```

@@ -27,13 +27,12 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    bool? result = await _flutterLocalNetworkIosPlugin.requestAuthorization();
-    print("result  $result");
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      platformVersion = await _flutterLocalNetworkIosPlugin.getPlatformVersion() ?? 'Unknown platform version';
+      platformVersion =
+          await _flutterLocalNetworkIosPlugin.getPlatformVersion() ?? 'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }

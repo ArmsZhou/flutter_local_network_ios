@@ -3,19 +3,22 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_local_network_ios/flutter_local_network_ios_method_channel.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   MethodChannelFlutterLocalNetworkIos platform = MethodChannelFlutterLocalNetworkIos();
   const MethodChannel channel = MethodChannel('flutter_local_network_ios');
 
-  TestWidgetsFlutterBinding.ensureInitialized();
-
   setUp(() {
-    channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '42';
-    });
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
+      channel,
+      (MethodCall methodCall) async {
+        return '42';
+      },
+    );
   });
 
   tearDown(() {
-    channel.setMockMethodCallHandler(null);
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(channel, null);
   });
 
   test('getPlatformVersion', () async {

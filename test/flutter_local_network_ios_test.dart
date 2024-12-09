@@ -1,7 +1,7 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_local_network_ios/flutter_local_network_ios.dart';
-import 'package:flutter_local_network_ios/flutter_local_network_ios_platform_interface.dart';
 import 'package:flutter_local_network_ios/flutter_local_network_ios_method_channel.dart';
+import 'package:flutter_local_network_ios/flutter_local_network_ios_platform_interface.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockFlutterLocalNetworkIosPlatform with MockPlatformInterfaceMixin implements FlutterLocalNetworkIosPlatform {
