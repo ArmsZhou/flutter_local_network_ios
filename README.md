@@ -9,11 +9,6 @@ For iOS
 <key>NSBonjourServices</key>
 <array>
     <string>_paperang._tcp</string>
-    <string>_esp_local_ctrl._tcp</string>
-    <string>_matter._tcp</string>
-    <string>_matterc._udp</string>
-    <string>_matterd._udp</string>
-    <string>_meshcop._udp</string>
 </array>
 ```
 
